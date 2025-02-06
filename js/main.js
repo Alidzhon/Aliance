@@ -40,7 +40,36 @@ mMenuToggle.addEventListener("click", (event) => {
 });
 
 
-const swiper = new Swiper('.swiper', {
+const swiperSteps = new Swiper(".steps-slider", {
+      speed: 400,
+      slidesPerView: 1,
+      navigation: {
+        nextEL: '.steps-button-next',
+        prevEL: '.steps-button-prev',
+    },
+    //   loop: true
+    breakpoints: {
+        // when window width is >= 320px
+        576: {
+          slidesPerView: 2,
+        //   centeredSlides: true,
+        //   slidesOffsetBefore: -100,
+        },
+        // when window width is >= 480px
+        768: {
+          slidesPerView: 3,
+        },
+        // when window width is >= 640px
+        1024: {
+          slidesPerView: 4,
+        },
+        1200: {
+            slidesPerView: 5,
+        },
+    },
+});
+
+const swiper = new Swiper('.features-slider', {
     speed: 400,
     // autoHeight: true,
     slidesPerView: 1,
@@ -68,3 +97,32 @@ const swiper = new Swiper('.swiper', {
         },
     },
 });
+
+// const swiper2 = new Swiper('.swiper2', {
+//     speed: 400,
+//     // autoHeight: true,
+//     slidesPerView: 1,
+//     navigation: {
+//         nextEL: '.slider-button-next',
+//         prevEL: '.slider-button-prev',
+//     },
+//     breakpoints: {
+//         // when window width is >= 320px
+//         576: {
+//           slidesPerView: 2,
+//         //   centeredSlides: true,
+//         //   slidesOffsetBefore: -100,
+//         },
+//         // when window width is >= 480px
+//         768: {
+//           slidesPerView: 3,
+//         },
+//         // when window width is >= 640px
+//         1024: {
+//           slidesPerView: 4,
+//         },
+//         1200: {
+//             slidesPerView: 5,
+//         },
+//     },
+// });

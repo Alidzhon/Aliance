@@ -259,16 +259,18 @@ button {
 .section-title {
      font-family: 'Bebas Neue Book';
      font-size: 3.75rem;
-     line-height: 120%;
-     color: #292D33; 
+     line-height: 95%;
+     letter-spacing: 0.4px;
+     color: #292D33;
      margin: 1.875rem 0 .625rem 0;
+     padding-left: 9px;
 }
 
 .steps {
       display: flex;
       list-style: none;
       padding: 0;
-      gap: 1.875rem;
+      gap: 4.75rem;
       margin-top: 3.125rem;
 }
 
@@ -306,7 +308,7 @@ button {
 .steps-text {
      font-size: 1rem;
      font-weight: 400;
-     line-height: 160%;
+     line-height: 173%;
      color: #828A99;
      margin: 0 0 1.25rem 0;
 }
@@ -327,6 +329,23 @@ button {
       height: .0625rem;
       background: #5C8EE6;
       margin-right: 1.25rem;
+}
+
+.steps-buttons {
+      display: none;
+      justify-content: flex-end;
+      height: 2.5rem;
+}
+
+.steps-button-prev,
+.steps-button-next {
+     width: 60px;
+     height: 100%;
+     background: #5c8ee6;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
 }
 
 @media (max-width: 1700px) {
@@ -377,6 +396,10 @@ button {
      .slider-buttons {
           display: flex; 
      }
+     .steps-buttons {
+          display: flex;
+    }
+    
 }
 @media (max-width: 992px) {
      html {
