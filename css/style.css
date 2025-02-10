@@ -541,7 +541,7 @@ button {
           display: none;       
      }
      .navbar {
-          height: 5rem; 
+          height: 5.8rem; 
      }
      .navbar-button {
           padding-left: 2rem;
@@ -578,13 +578,20 @@ button {
           justify-content: center;
           border: none;
      }
+     .logo-svg {
+          max-width: 10rem;
+      }
+      .navbar-button {
+           padding-left: 2.3rem;
+           padding-right: 2.3rem;
+      }
      .mobile-menu-toggle {
            width: 80px;
            height: 100%;
            display: flex;
            flex-direction: column;
            justify-content: space-between;
-           padding: 1.8rem;
+           padding: 2.3rem 2.5rem;
            border-right: 1px solid rgba(235, 235, 240, 0.2);
      }
      .navbar-light .mobile-menu-line {
@@ -712,29 +719,93 @@ button {
 
      }
      .header-content {
-          padding-top: 3rem; 
+          padding-top: 4rem; 
      }
      .card {
           flex-basis: 100%;
      }
 }
+
 @media (max-width: 576px) {
+     .seporator {
+          width: 8.375rem;
+      }
      .container {
          max-width: 90%;
+     }  
+     .brand-title {
+        font-size: 20px;
+        line-height: 130%;
+     }
+     .brand-text {
+        font-size: 14px; 
      }
      .header-title {
-         font-size: 2rem;
-
-   }
-   .header-content {
-        padding-top: 2rem; 
-   }
-   
-.brand-title {
-     font-size: 20px;
-     line-height: 130%;
-}
-.brand-text {
-     font-size: 14px;
-}
+        margin: 0.875rem 0 1.875rem 0;
+     }
+     .header-text {
+          max-width: 25rem;
+          font-size: 1.1rem;
+          line-height: 165%;
+     }
+     .header-button {
+          padding: 1.25rem 7.37rem;
+     }
+     .header-features-item {
+          padding: 0.75rem 2.125rem;
+     }
+     .header-features-text {
+          width: 143px;
+          line-height: 201%;
+     }
+     .section-light {
+          margin: 8rem 0 0 0;
+     }
+     .section-title-light {
+          font-size: 3rem;
+          letter-spacing: 0;
+          padding-left: 0;
+     }
+     .steps-num {
+          line-height: 67%;
+          font-size: 4rem;
+          gap: 7.75rem;
+     }
+     .steps-text {
+          margin-bottom: 30px;
+     }
+     .steps-buttons {
+          margin-top: -15px;
+          height: 3.5rem;
+     }
+     .steps__link {
+          font-size: 1.2rem;
+          line-height: 136%;
+     }
+     .steps__link::before {
+          width: 3.5rem;
+      }
+      .production {
+          margin-top: 96px;
+      }
+      .section-title-production {
+          font-size: 2.75rem;
+          letter-spacing: 1.4px;
+          line-height: 95%;
+          padding-left: 0;
+      }
+      .cards {
+          margin-top: 39px;
+      }
+      .card-content {
+          padding: 1.5rem 2.125rem;
+      }
+      .card-image {
+          width: 100%;
+      }
+      .brand-main-title {
+          font-size: 2.75rem;
+          line-height: 153%;
+          padding: 0;
+      }
 }
