@@ -442,6 +442,71 @@ button {
       /* width: 100%; */
 }
 
+.trademark-cards {
+      display: flex;
+      margin-top: 71px;
+}
+
+.trademark-card {
+     flex-basis: 50%;
+     text-decoration: none;
+     border: 1px solid #ebebf0;
+     transition: border 0.2s;
+     padding: 3.125rem;
+     display: grid;
+     grid-template-columns: 180px 1fr;
+     grid-template-rows: auto 2fr;
+     grid-column-gap: 3.125rem;
+     grid-template-areas: 
+          "logo title title"
+          "logo text text";
+}
+
+.trademark-card-logo {
+     grid-area: logo;
+     fill: #828A99;
+     width: 100%;
+}
+
+.trademark-card-title {
+     grid-area: title;
+     font-size: 1.75rem;
+     font-weight: 400;
+     line-height: 160%;
+     color: #292D33;
+     margin: 0;     
+}
+
+.trademark-card-text {
+     grid-area: text;
+     font-style: normal;
+     font-size: 1rem;
+     font-weight: 400;
+     line-height: 160%;
+     color: #828A99;
+     margin: 0.625rem 0 0 0;
+}
+
+.trademark-card:hover {
+     border-color: #5c8ee6;
+}
+
+.trademark-card:hover .trademark-card-logo {
+     fill: #5C8EE6;
+}
+
+.trademark-card:hover .trademark-card-title {
+     color: #5C8EE6;
+}
+
+.section-title-trademark {
+     line-height: 82%;
+}
+
+
+
+
+/* 
 .brand {
       padding-top: 9.375rem;
       padding-bottom: 9.375rem;
@@ -499,7 +564,8 @@ button {
      margin-top: 10px;
      margin-bottom: 0;
      max-width: 894px;
-}
+} */
+
 
 
 @media (max-width: 1700px) {
@@ -560,6 +626,10 @@ button {
      display: flex;
      flex-direction: column;
 }
+
+   .trademark-card {
+      grid-template-columns: auto auto;
+   }
 
 }
 
@@ -708,6 +778,10 @@ button {
     .close-menu .mobile-menu-line:nth-child(3) {
         transform: rotate(-45deg) translateY(-9px);
     }
+
+    .trademark-cards {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 768px) {
@@ -733,13 +807,13 @@ button {
      .container {
          max-width: 90%;
      }  
-     .brand-title {
+     /* .brand-title {
         font-size: 20px;
         line-height: 130%;
      }
      .brand-text {
         font-size: 14px; 
-     }
+     } */
      .header-title {
         margin: 0.875rem 0 1.875rem 0;
      }
@@ -807,5 +881,14 @@ button {
           font-size: 2.75rem;
           line-height: 153%;
           padding: 0;
+      }
+
+      .trademark-card {
+          grid-template-areas:
+            "logo title"
+            "text text";
+      }
+      .section-title-trademark {
+          font-size: 2.75rem;
       }
 }
