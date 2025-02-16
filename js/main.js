@@ -98,6 +98,38 @@ const swiper = new Swiper('.features-slider', {
     },
 });
 
+const swiperBlog = new Swiper(".blog-slider", {
+  speed: 400,
+  slidesPerView: 1,
+  spaceBetween: 30,
+  navigation: {
+    nextEL: '.blog-button-next',
+    prevEL: '.blog-button-prev',
+},
+breakpoints: {
+  // when window width is >= 320px
+  576: {
+    slidesPerView: 1,
+  //   centeredSlides: true,
+  //   slidesOffsetBefore: -100,
+  },
+  // when window width is >= 480px
+  768: {
+    slidesPerView: 1,
+  },
+  // when window width is >= 640px
+  1024: {
+    slidesPerView: 2,
+  },
+  1200: {
+      slidesPerView: 2,
+  },
+},
+
+  
+});
+
+
 // const swiper2 = new Swiper('.swiper2', {
 //     speed: 400,
 //     // autoHeight: true,
