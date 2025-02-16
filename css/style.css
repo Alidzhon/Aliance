@@ -344,7 +344,7 @@ button {
      margin: 0 0 1.25rem 0;
 }
 
-.steps__link {
+.button-link {
       display: flex;
       align-items: center;
       text-decoration: none;
@@ -354,7 +354,7 @@ button {
       color: #5C8EE6;
 }
 
-.steps__link::before {
+.button-link::before {
       content: "";
       width: 2.5rem;
       height: .0625rem;
@@ -363,7 +363,7 @@ button {
       transition: width 0.2s;
 }
 
-.steps__link:hover::before {
+.button-link:hover::before {
       width: 60px;
 }
 
@@ -504,6 +504,105 @@ button {
 }
 
 
+/* .founder {
+     background-image: url('../img/founder.jpg');
+     background-repeat: no-repeat;
+     background-position: left top;
+     background-size: 40%;
+} */
+
+.founder {
+     position: relative;
+     min-height: 41.25rem;
+}
+
+.section-title-founder {
+     max-width: 480px;
+     margin-bottom: 0;
+     line-height: 112%;
+     padding-left: 0;
+}
+
+.founder-photo {
+     position: absolute;
+     left: 0;
+     width: 40%;
+     top: 0;
+     height: 100%;
+     object-fit: cover;
+}
+
+.founder-content-wrapper {
+      display: flex;
+      justify-content: flex-end;
+}
+
+.founder-content {
+      max-width: 45rem;
+      margin-top: 56px;
+}
+
+.founder-text {
+     max-width: 702px;
+     font-size: 1rem;
+     font-weight: 400;
+     line-height: 174%;
+     color: #828A99;
+}
+
+.section-title-clients {
+     margin-bottom: 0;
+     padding-left: 9px;
+     line-height: 100%;
+}
+
+.clients-wrapper {
+     display: flex; 
+     gap: 3.125rem;
+}
+
+.clients-content {
+     flex-basis: 50%;
+}
+
+.clients-list {
+     list-style-type: none;
+     padding: 0;
+     columns: 2 auto;
+     margin: 38px 0 0 0;
+}
+
+.clients-list-item {
+     display: flex;
+     align-items: center;
+     gap: 1.25rem;
+     font-size: 16px;
+     font-weight: 400;
+     line-height: 160%;
+     color: #292D33;
+     margin-bottom: 20px;
+}
+
+.clients-logo-list {
+      flex-shrink: 10;
+      display: flex;
+      flex-wrap: wrap;
+}
+
+.clients-logo-item {
+     flex-basis: 33%;
+     border: 1px solid #ebebf0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 1rem;
+}
+
+.clients-logo {
+     max-width: 100%;
+     width: 70px;
+     height: 70px;
+}
 
 
 /* 
@@ -565,8 +664,6 @@ button {
      margin-bottom: 0;
      max-width: 894px;
 } */
-
-
 
 @media (max-width: 1700px) {
       html {
@@ -631,6 +728,12 @@ button {
       grid-template-columns: auto auto;
    }
 
+   .founder-content {
+      max-width: 35rem;
+   }
+   .clients-content {
+     flex-basis: 60%;
+   }
 }
 
 @media (max-width: 992px) {
@@ -782,6 +885,9 @@ button {
     .trademark-cards {
         flex-direction: column;
     }
+    .clients-wrapper {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 768px) {
@@ -797,6 +903,13 @@ button {
      }
      .card {
           flex-basis: 100%;
+     }
+     .founder-photo {
+          position: relative;
+          width: 100%;
+          margin-bottom: 3.125rem;
+          min-height: 41.25rem;
+          object-fit: cover;
      }
 }
 
@@ -852,11 +965,11 @@ button {
           margin-top: -15px;
           height: 3.5rem;
      }
-     .steps__link {
+     .button-link {
           font-size: 1.2rem;
           line-height: 136%;
      }
-     .steps__link::before {
+     .button-link::before {
           width: 3.5rem;
       }
       .production {
@@ -891,4 +1004,33 @@ button {
       .section-title-trademark {
           font-size: 2.75rem;
       }
+      .clients-list {
+          columns: 1;
+      }
+      
+      .clients-logo-item {
+          flex-basis: 50%;
+      }
+     .trademark {
+          margin: -1.625rem 0 9.375rem 0;
+      }
+      .founder-photo {
+          min-height: 0;
+      }
+      .section-title-founder {
+          font-size: 2.75rem;
+      }
+      .founder-content {
+          margin-top: -2px;
+      }
+      .founder-text {
+          margin-bottom: 105px;
+      }
+     .section-title-clients {
+          font-size: 2.75rem;
+     }
+     .clients-list-item {
+          margin-bottom: 16px;
+          font-size: 14px;
+     }
 }
