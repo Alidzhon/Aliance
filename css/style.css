@@ -740,6 +740,126 @@ button {
 }
 
 
+.bg-grey {
+     background: #F0F2F5;
+}
+
+.section-cta {
+     position: relative;
+     padding-top: 15.25rem;
+     padding-bottom: 6.25rem;
+}
+
+.cta-image {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     max-width: 720px;
+     width: 50%;
+}
+
+.cta-from-wrapper {
+      display: flex;
+      justify-content: flex-end;
+}
+
+.cta-form {
+     max-width: 840px;
+}
+
+.cta-form-text {
+     font-style: normal;
+     font-size: 16px;
+     font-weight: 400;
+     line-height: 160%;
+     color: #828A99;
+     margin-top: 20px;
+     margin-bottom: 42px;
+     max-width: 640px;
+}
+
+.input-group-wrapper {
+     display: flex;
+     gap: 30px;
+}
+
+.input-group {
+      position: relative;
+      height: 66px;
+      flex-grow: 1;
+      background-color: #f0f2f5;
+}
+
+.input {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 1.25rem 1.85rem;
+      border: 1px solid #e4e4eb;
+      background-color: transparent;
+      outline: none;
+}
+
+.input-group-label {
+     position: absolute;
+     cursor: text;
+     top: 1.5rem;
+     left: 1.975rem;
+     font-weight: 400;
+     font-size: 1rem;
+     color: #828A99;
+     transition: top 0.2s, left 0.2s, font-size 0.2s;
+}
+
+.input:focus {
+     border: 1px solid  #5C8EE6;
+    
+}
+
+.input:focus ~ .input-group-label,
+.input:not(:placeholder-shown).input:not(:focus) ~ .input-group-label {
+     top: -0.5rem;
+     left: 1.25rem;
+     font-size: 0.625rem;
+     background-color: inherit;
+     padding: 0 10px;
+}
+
+.cta-form-footer {
+     gap: 1.875rem;
+     display: flex;
+     align-items: center;
+     margin-top: 1.25rem;
+}
+
+.cta-form-button {
+     flex-shrink: 0;
+}
+
+.notify {
+     display: flex;
+     align-items: flex-start;
+     gap: 0.625rem;
+}
+
+.notify-icon {
+     flex-shrink: 0;
+}
+
+.notify-text {
+      margin: 0;
+      max-width: 380px;
+      font-style: normal;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 160%;
+      color: #828A99;
+}
+
+
+
 @media (max-width: 1700px) {
       html {
            font-size: .875rem;
@@ -815,6 +935,10 @@ button {
    }
    .clients-content {
      flex-basis: 60%;
+   }
+
+   .cta-image {
+       display: none;
    }
 }
 
@@ -993,6 +1117,30 @@ button {
           min-height: 41.25rem;
           object-fit: cover;
      }
+     .section-cta {
+          padding-top: 50px;
+          padding-bottom: 50px;
+     }
+     .cta-form-title {
+          margin: 0;
+          padding: 0;
+     }
+     .cta-form-text {
+          font-size: 14px;
+     }
+     .input-group-wrapper {
+           flex-direction: column;
+           gap: 20px;
+     }
+     .cta-form-footer {
+          flex-direction: column;
+     }
+     .cta-form-button {
+          padding-left: 105px;
+          padding-right: 105px;
+     }
+
+
 }
 
 @media (max-width: 576px) {
@@ -1125,4 +1273,14 @@ button {
      .section-title {
           font-size: 2.25rem;
      }
+     .section-cta {
+          padding-top: 31px;
+     }
+     .cta-form-title {
+          font-size: 36px;
+     }
+     .cta-form-button {
+          padding-top: 20px;
+          padding-bottom: 20px;
+      }
 }
