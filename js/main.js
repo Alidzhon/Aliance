@@ -39,7 +39,6 @@ mMenuToggle.addEventListener("click", (event) => {
     menu.classList.contains("is-open") ? closeMenu() : openMenu(); 
 });
 
-
 const swiperSteps = new Swiper(".steps-slider", {
       speed: 400,
       slidesPerView: 1,
@@ -125,10 +124,34 @@ breakpoints: {
       slidesPerView: 2,
   },
 },
-
   
 });
 
+const modal = document.querySelector(".modal");
+const modalToggle = document.querySelectorAll("[data-toggle=modal]");
+const modalClose = document.querySelector(".modal-close");
+
+modalToggle.forEach((element) => {
+       element.addEventListener("click", (event) =>  {
+             event.preventDefault();
+             modal.classList.add("is-open");
+       });
+});
+
+modalClose.addEventListener("click", (event) => {
+          event.preventDefault();
+          modal.classList.remove("is-open");
+});
+
+modal.addEventListener("click", (event) => {
+      const target = event.target;
+      target.classList.remove("is-open");
+});
+
+document.addEventListener("keydown", (event) => {
+       if (event.keyCode == 27) {
+        modal.classList.remove("is-open");
+}});
 
 // const swiper2 = new Swiper('.swiper2', {
 //     speed: 400,
