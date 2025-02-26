@@ -52,15 +52,28 @@ body {
 .navbar-light {
      background-color: #fff;
      color: #292b33;
-     height: 4.625rem;
+     /* height: 4.625rem; */
+}
+
+.logo-dark {
+     display: none;
+}
+
+.navbar-light .logo-light {
+       display: none;
+}
+
+.navbar-light .logo-dark {
+     display: block;
+}
+
+
+.navbar-scroll {
+      height: 4.5rem;
 }
 
 .phone-svg {
      fill: #5C8EE6;
-}
-
-.logo {
-     display: none;
 }
 
 .logo-svg {
@@ -1100,6 +1113,74 @@ button {
      margin-bottom: 24px;
 }
 
+.about-company {
+      margin: 50px 0 100px 0; 
+      padding: 100px 0 100px 0; 
+      background-color: #F0F2F5;
+}
+
+.about-company-title {
+     font-family: 'Bebas Neue Regular';
+     font-style: normal;
+     font-size: 80px;
+     font-weight: 400;
+     line-height: 120%;
+     color: #292D33;
+     margin-top: 30px;
+     margin-bottom: 0;
+     text-transform: uppercase;
+}
+
+.about-company-items {
+     margin: 0;
+     padding: 0;
+     display: flex;
+     list-style-type: none;
+     margin-top: 20px;
+}
+.about-company-link {
+     font-style: normal;
+     font-size: 14px;
+     font-weight: 400;
+     line-height: 160%;
+     color: #828A99;
+     text-decoration: none;
+     position: relative;
+     display: flex;
+     align-items: center;
+     margin-right: 34px;
+}
+
+.about-company-link::after {
+       content: "";
+       width: 14px;
+       height: 1px;
+       background-color: #828A99;
+       position: absolute;
+       margin-left: 72px;
+}
+
+.about-company-item {
+     font-style: normal;
+     font-size: 14px;
+     font-weight: 400;
+     line-height: 160%;
+     color: #292D33;
+     margin-left: 10px;
+}
+
+.about-company-item:first-child {
+     margin-left: 0;
+}
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 1700px) {
       html {
@@ -1453,6 +1534,10 @@ button {
      }
      .footer-menu-column-2 {
           columns: 1;
+     }
+     .about-company-title {
+          font-size: 48px;
+          margin-top: 20px;
      }
 }
 
