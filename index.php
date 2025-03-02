@@ -561,14 +561,24 @@
                <p class="modal-text">
                 Оставьте заявку, наш менеджер свяжется с Вами в ближайшее время ответит на все интересующие вопросы и поможем даже в самых сложных случаях!
                </p>
-               <form action="#" class="modal-form">
+               <form action="handler.php" method="POST" class="modal-form">
                 <div class="input-group-wrapper input-group-vertical">
                     <div class="input-group modal-input-group">
-                       <input id="modal-user-name" type="text" class="input modal-input"  placeholder=" ">
+                       <input 
+                       id="modal-user-name" 
+                       type="text" 
+                       class="input modal-input"  
+                       placeholder=" "
+                       name="username">
                        <label for="modal-user-name" class="input-group-label modal-input-label">Имя</label>
                     </div>
                     <div class="input-group modal-input-group">
-                      <input id="modal-user-phone" type="tel" class="input modal-input" placeholder=" ">
+                      <input 
+                        id="modal-user-phone" 
+                        type="tel" 
+                        class="input modal-input" 
+                        placeholder=" "
+                        name="userphone">
                       <label for="modal-user-phone" class="input-group-label modal-input-label">Номер телефона</label>
                    </div>
                 </div>
@@ -588,8 +598,28 @@
           </div> 
      </div>
 
+       <div class="popup">
+             <div class="popup-block">
+             <a href="#" class="modal-popup-close">
+                     <svg class="close-icon"  width="24" height="24">
+                         <use href="img/icon/sprite.svg#close"></use>
+                    </svg>
+             </a>
+               <svg class="thanks_illu"  width="360" height="310">
+                    <use href="img/icon/sprite.svg#thanks_illu"></use>
+                </svg>
+                <h2 class="popup-title">Спасибо за заявку!</h2>
+                <p class="popup__text">
+                       Наш менеджер свяжется с Вами в ближайшее время ответит на все интересующие вопросы и поможем даже в самых сложных случаях!
+                </p>
+                <a href="#" class="popup__link">
+                       Вернуться на главную
+                </a>
+             </div> 
+       </div>
 
    <script src="js/swiper-bundle.min.js"></script> 
+   <script src="js/just-validate.production.min.js"></script>
    <script src="js/main.js"></script>
 </body>
 </html>
