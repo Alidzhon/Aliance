@@ -137,30 +137,62 @@ breakpoints: {
   
 });
 
-const modal = document.querySelector(".modal");
-const modalDialog = document.querySelector(".modal-dialog");
 
-document.addEventListener("click", (event) => {
-       if (event.target.dataset.toggle == "modal" || 
-           event.target.parentNode.dataset.toggle == "modal" ||
-           (!event.composedPath().includes(modalDialog) &&
-             modal.classList.contains("is-open"))
-          ) {
+
+// const modal = document.querySelector(".modal");
+// const modalDialog = document.querySelector(".modal-dialog");
+
+
+let currentModal; // Текущее модальное окно
+let modalDialog;  // Белое диалоговое окно
+let alertModal = document.querySelector("#alert-modal"); // окно с предупреждением
+
+const modalButtons = document.querySelectorAll("[data-toggle=modal]"); // Переключатели модальных окон 
+modalButtons.forEach((button) => {
+       // Клик по переключателю
+       button.addEventListener("click", (event) => {
               event.preventDefault();
-              modal.classList.toggle("is-open");
-          }  
+              /* Определяем текущее открытое окно*/
+              currentModal = document.querySelector(button.dataset.target);
+                   /* открываем текущее  окно*/
+              currentModal.classList.toggle("is-open");
+                 /* назначаем диалоговое  окно*/
+              modalDialog = currentModal.querySelector(".modal-dialog");
+                         /* Отслеживаем клик по окну и пустым областьям */
+              currentModal.addEventListener("click", (event) => {
+                           /* если клик в пустую область (не диалог) */
+                  if (!event.composedPath().includes(modalDialog)) {
+                              /* закрываем окно */
+                       currentModal.classList.remove("is-open");
+                  }
+              })
+       });
 });
+
 
 document.addEventListener("keyup", (event) => {
-        if (event.key == "Escape" && modal.classList.contains("is-open")) {
-            modal.classList.toggle("is-open");
-        }
+  if (event.key == "Escape" && currentModal.classList.contains("is-open")) {
+      currentModal.classList.toggle("is-open");
+  }
 });
+
+
+
+
+// document.addEventListener("click", (event) => {
+//        if (event.target.dataset.toggle == "modal" || 
+//            event.target.parentNode.dataset.toggle == "modal" ||
+//            (!event.composedPath().includes(modalDialog) &&
+//              modal.classList.contains("is-open"))
+//           ) {
+//               event.preventDefault();
+//               modal.classList.toggle("is-open");
+//           }  
+// });
 
 
 
 const forms = document.querySelectorAll("form");
-
 
 forms.forEach((form) => {
      const validation = new JustValidate(form, {
@@ -195,9 +227,20 @@ validation
            }).then((response) => {
                 if (response.ok) {
                    thisForm.reset();
+                   currentModal.classList.remove("is-open");
+                   alertModal.classList.add("is-open");
+                   currentModal = alertModal;
+                   modalDialog = currentModal.querySelector(".modal-dialog");
+                   /* Отслеживаем клик по окну и пустым областьям */
+                   currentModal.addEventListener("click", (event) => {
+                     /* если клик в пустую область (не диалог) */
+                      if (!event.composedPath().includes(modalDialog)) {
+                        /* закрываем окно */
+                      currentModal.classList.remove("is-open");
+            }
+        })
                   //  alert("Форма отправлена! ");
-                  popup.classList.add("active");
-
+                  // popup.classList.add("active");
                 }
                 else {
                   alert(response.statusText);
@@ -279,14 +322,6 @@ document.addEventListener("input", (e) => {
     input.value = result;	
   }	
 });	
-
-
-
-
-
-
-
-
 
 // const modalToggle = document.querySelectorAll("[data-toggle=modal]");
 // const modalClose = document.querySelector(".modal-close");

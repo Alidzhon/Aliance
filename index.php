@@ -90,7 +90,7 @@
             </svg>
               <a href="tel:+74996861014" class="header-phone-link">+7 (499) 686-10-14</a>
          </div>
-         <button class="navbar-button button" data-toggle="modal">
+         <button class="navbar-button button" data-toggle="modal" data-target="#feedback-modal">
             <svg class="button-icon" width="24" height="24">
                 <use href="img/icon/sprite.svg#phone"></use>
             </svg>
@@ -105,7 +105,7 @@
                     <?php echo "Главная страница"; ?>
                     <!-- <h1 class="header-title">Комплексное обеспечение товарами и расходными материалами бизнеса</h1> -->
                     <p class="header-text">Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от анализа существующих паттернов поведения.</p>
-                    <button class="button header-button" data-toggle="modal">Подробнее о компании</button>
+                    <button class="button header-button" data-toggle="modal" data-target="#feedback-modal">Подробнее о компании</button>
                </div>
                <!-- /.header-content -->  
 
@@ -550,10 +550,10 @@
      <?php include_once('footer.php');?>
    
 
-     <div class="modal">
+     <div class="modal" id="feedback-modal">
           <div class="modal-dialog">
                <h2 class="modal-title">Есть вопросы?</h2>
-               <a href="#" class="modal-close" data-toggle="modal">
+               <a href="#" class="modal-close" data-toggle="modal" data-target="#feedback-modal">
                      <svg class="close-icon"  width="24" height="24">
                          <use href="img/icon/sprite.svg#close"></use>
                     </svg>
@@ -598,7 +598,25 @@
           </div> 
      </div>
 
-       <div class="popup">
+     <div class="modal" id="alert-modal">
+          <div class="modal-dialog">
+               <a href="#" class="modal-close" data-toggle="modal" data-target="#alert-modal">
+                     <svg class="close-icon"  width="24" height="24">
+                         <use href="img/icon/sprite.svg#close"></use>
+                    </svg>
+               </a>
+               <svg class="thanks_illu"  width="360" height="310">
+                    <use href="img/icon/sprite.svg#thanks_illu"></use>
+                </svg>
+               <h2 class="modal-title-alert">Спасибо за заявку!</h2>
+               <p class="modal-text">
+                    Наш менеджер свяжется с Вами в ближайшее время ответит на все интересующие вопросы и поможем даже в самых сложных случаях!
+               </p>
+               <button type="submit" class="button modal-form-button"  data-toggle="modal" data-target="#alert-modal">Вернуться на главную</button>
+          </div> 
+     </div>
+
+       <!-- <div class="popup">
              <div class="popup-block">
              <a href="#" class="modal-popup-close">
                      <svg class="close-icon"  width="24" height="24">
@@ -616,7 +634,7 @@
                        Вернуться на главную
                 </a>
              </div> 
-       </div>
+       </div> -->
 
    <script src="js/swiper-bundle.min.js"></script> 
    <script src="js/just-validate.production.min.js"></script>
