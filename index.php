@@ -6,10 +6,12 @@
     <title>Aliance Production</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        /*! modernizr 3.6.0 (Custom Build) | MIT *
+ * https://modernizr.com/download/?-setclasses !*/
+!function(n,e,s){function o(n){var e=r.className,s=Modernizr._config.classPrefix||"";if(c&&(e=e.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+s+"no-js(\\s|$)");e=e.replace(o,"$1"+s+"js$2")}Modernizr._config.enableClasses&&(e+=" "+s+n.join(" "+s),c?r.className.baseVal=e:r.className=e)}function a(n,e){return typeof n===e}function i(){var n,e,s,o,i,l,r;for(var c in f)if(f.hasOwnProperty(c)){if(n=[],e=f[c],e.name&&(n.push(e.name.toLowerCase()),e.options&&e.options.aliases&&e.options.aliases.length))for(s=0;s<e.options.aliases.length;s++)n.push(e.options.aliases[s].toLowerCase());for(o=a(e.fn,"function")?e.fn():e.fn,i=0;i<n.length;i++)l=n[i],r=l.split("."),1===r.length?Modernizr[r[0]]=o:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=o),t.push((o?"":"no-")+r.join("-"))}}var t=[],f=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(n,e){var s=this;setTimeout(function(){e(s[n])},0)},addTest:function(n,e,s){f.push({name:n,fn:e,options:s})},addAsyncTest:function(n){f.push({name:null,fn:n})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var r=e.documentElement,c="svg"===r.nodeName.toLowerCase();i(),o(t),delete l.addTest,delete l.addAsyncTest;for(var u=0;u<Modernizr._q.length;u++)Modernizr._q[u]();n.Modernizr=Modernizr}(window,document);
+    </script>
 </head>
 <body  class="front-page">
     <div class="mobile-menu">
@@ -102,8 +104,8 @@
           <div class="container">
                <div class="header-content">
                     <div class="seporator"></div>
-                    <?php echo "Главная страница"; ?>
-                    <!-- <h1 class="header-title">Комплексное обеспечение товарами и расходными материалами бизнеса</h1> -->
+                      <!-- <?php echo "Главная страница"; ?> -->
+                    <h1 class="header-title">Комплексное обеспечение товарами и расходными материалами бизнеса</h1>
                     <p class="header-text">Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от анализа существующих паттернов поведения.</p>
                     <button class="button header-button" data-toggle="modal" data-target="#feedback-modal">Подробнее о компании</button>
                </div>
@@ -350,31 +352,17 @@
               </div>
            </div>
      </section> -->
-       <section class="section trademark">
-                <div class="container">
-                    <div class="seporator"></div>
-                    <h2 class="section-title section-title-trademark">собственные торговые марки</h2>
-                    <div class="trademark-cards">
-                        <div class="trademark-card">
-                            <svg class="trademark-card-logo">
-                                <use href="img/icon/sprite.svg#agtech"></use>
-                            </svg>
-                            <h3 class="trademark-card-title">Автохимия AG-Tech</h3>
-                            <p class="trademark-card-text">Для современного мира разбавленное изрядной долей эмпатии, рациональное мышление создаёт предпосылки для поставленных обществом задач.</p>
-                        </div>
-                        <div class="trademark-card">
-                            <svg class="trademark-card-logo">
-                                <use href="img/icon/sprite.svg#agtech-light"></use>
-                            </svg>
-                            <h3 class="trademark-card-title">Автохимия AP</h3>
-                            <p class="trademark-card-text">Для современного мира разбавленное изрядной долей эмпатии, рациональное мышление создаёт предпосылки для поставленных обществом задач.</p>
-                        </div>
-                    </div>
-                </div>
-       </section>
+
+     <?php $block_title = "собственные торговые марки"; include_once('./template-parts/traddemarks-block.php')?>
+
 
        <section class="section founder">
-            <img src="img/founder.jpg" alt="founder" class="founder-photo">
+            <picture class="founder-photo">
+                <source type="image/webp" srcset="img/founder.webp">
+                <source type="image/jpeg" srcset="img/founder.jpg">
+                <img src="img/founder.jpg" alt="founder">
+            </picture>
+            <!-- <img src="img/founder.jpg" alt="founder"> -->
                <div class="container">
                    <div class="founder-content-wrapper">
                     <div class="founder-content">
@@ -549,72 +537,6 @@
 
      <?php include_once('footer.php');?>
    
-
-     <div class="modal" id="feedback-modal">
-          <div class="modal-dialog">
-               <h2 class="modal-title">Есть вопросы?</h2>
-               <a href="#" class="modal-close" data-toggle="modal" data-target="#feedback-modal">
-                     <svg class="close-icon"  width="24" height="24">
-                         <use href="img/icon/sprite.svg#close"></use>
-                    </svg>
-               </a>
-               <p class="modal-text">
-                Оставьте заявку, наш менеджер свяжется с Вами в ближайшее время ответит на все интересующие вопросы и поможем даже в самых сложных случаях!
-               </p>
-               <form action="handler.php" method="POST" class="modal-form">
-                <div class="input-group-wrapper input-group-vertical">
-                    <div class="input-group modal-input-group">
-                       <input 
-                       id="modal-user-name" 
-                       type="text" 
-                       class="input modal-input"  
-                       placeholder=" "
-                       name="username">
-                       <label for="modal-user-name" class="input-group-label modal-input-label">Имя</label>
-                    </div>
-                    <div class="input-group modal-input-group">
-                      <input 
-                        id="modal-user-phone" 
-                        type="tel" 
-                        class="input modal-input" 
-                        placeholder=" "
-                        name="userphone">
-                      <label for="modal-user-phone" class="input-group-label modal-input-label">Номер телефона</label>
-                   </div>
-                </div>
-                <div class="modal-form-footer">
-                     <button type="submit" class="button modal-form-button">Отправить заявку</button>
-                     <div class="notify">
-                      <svg  width="14" height="14" class="notify-icon">
-                          <use href="img/icon/sprite.svg#shield"></use>
-                      </svg>
-                         <p class="notify-text">
-                          Обращаясь к нам вы получаете не только профессиональную работу, но и абсолютную конфиденциальность информации!
-                         </p>
-                     </div>
-                </div>
-                <!-- /.modal-form-footer -->
-           </form>
-          </div> 
-     </div>
-
-     <div class="modal" id="alert-modal">
-          <div class="modal-dialog">
-               <a href="#" class="modal-close" data-toggle="modal" data-target="#alert-modal">
-                     <svg class="close-icon"  width="24" height="24">
-                         <use href="img/icon/sprite.svg#close"></use>
-                    </svg>
-               </a>
-               <svg class="thanks_illu"  width="360" height="310">
-                    <use href="img/icon/sprite.svg#thanks_illu"></use>
-                </svg>
-               <h2 class="modal-title-alert">Спасибо за заявку!</h2>
-               <p class="modal-text">
-                    Наш менеджер свяжется с Вами в ближайшее время ответит на все интересующие вопросы и поможем даже в самых сложных случаях!
-               </p>
-               <button type="submit" class="button modal-form-button"  data-toggle="modal" data-target="#alert-modal">Вернуться на главную</button>
-          </div> 
-     </div>
 
        <!-- <div class="popup">
              <div class="popup-block">

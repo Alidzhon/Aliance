@@ -157,4 +157,74 @@
             </div>           
     </footer>
 
+    <div class="modal" id="feedback-modal">
+          <div class="modal-dialog">
+               <h2 class="modal-title">Есть вопросы?</h2>
+               <a href="#" class="modal-close" data-toggle="modal" data-target="#feedback-modal">
+                     <svg class="close-icon"  width="24" height="24">
+                         <use href="img/icon/sprite.svg#close"></use>
+                    </svg>
+               </a>
+               <p class="modal-text">
+                Оставьте заявку, наш менеджер свяжется с Вами в ближайшее время ответит на все интересующие вопросы и поможем даже в самых сложных случаях!
+               </p>
+               <form action="handler.php" method="POST" class="modal-form">
+                <div class="input-group-wrapper input-group-vertical">
+                    <div class="input-group modal-input-group">
+                       <input 
+                       id="modal-user-name" 
+                       type="text" 
+                       class="input modal-input"  
+                       placeholder=" "
+                       name="username">
+                       <label for="modal-user-name" class="input-group-label modal-input-label">Имя</label>
+                    </div>
+                    <div class="input-group modal-input-group">
+                      <input 
+                        id="modal-user-phone" 
+                        type="tel" 
+                        class="input modal-input" 
+                        placeholder=" "
+                        name="userphone">
+                      <label for="modal-user-phone" class="input-group-label modal-input-label">Номер телефона</label>
+                   </div>
+                </div>
+                <div class="modal-form-footer">
+                     <button type="submit" class="button modal-form-button">Отправить заявку</button>
+                     <div class="notify">
+                      <svg  width="14" height="14" class="notify-icon">
+                          <use href="img/icon/sprite.svg#shield"></use>
+                      </svg>
+                         <p class="notify-text">
+                          Обращаясь к нам вы получаете не только профессиональную работу, но и абсолютную конфиденциальность информации!
+                         </p>
+                     </div>
+                </div>
+                <!-- /.modal-form-footer -->
+           </form>
+          </div> 
+     </div>
 
+     <div class="modal" id="alert-modal">
+          <div class="modal-dialog">
+               <a href="#" class="modal-close" data-toggle="modal" data-target="#alert-modal">
+                     <svg class="close-icon"  width="24" height="24">
+                         <use href="img/icon/sprite.svg#close"></use>
+                    </svg>
+               </a>
+               <svg class="thanks_illu"  width="360" height="310">
+                    <use href="img/icon/sprite.svg#thanks_illu"></use>
+                </svg>
+               <h2 class="modal-title-alert">Спасибо за заявку!</h2>
+               <p class="modal-text">
+                    Наш менеджер свяжется с Вами в ближайшее время ответит на все интересующие вопросы и поможем даже в самых сложных случаях!
+               </p>
+               <button type="submit" class="button modal-form-button"  data-toggle="modal" data-target="#alert-modal">Вернуться на главную</button>
+          </div> 
+     </div>
+
+
+
+<script src="js/swiper-bundle.min.js"></script> 
+<script src="js/just-validate.production.min.js"></script>
+<script src="js/main.js"></script>
